@@ -11,6 +11,9 @@ int main() {
 	if (pLevel > eLevel) {
 		cout << "You win.\n";
 	}
+	else {
+		cout << "You lose.\n";
+	}
 
 	return 0;
 	
