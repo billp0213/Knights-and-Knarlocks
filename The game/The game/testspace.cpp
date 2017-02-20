@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 		al_show_native_message_box(NULL, NULL, NULL, "Failed to initialize allegro!", NULL, NULL);
 		return -1;
 	}
-	display = al_create_display(640, 480);
+	display = al_create_display(1280, 960);
 	if (!display) {
 		al_show_native_message_box(NULL, NULL, NULL, "Failed to initialize display", NULL, NULL);
 		return -1;
@@ -41,6 +41,7 @@ int main(int argc, char** argv)
 
 	al_hide_mouse_cursor(display);
 	int counter = 0;
+	int r = 255, b = 255, g = 255;
 	al_start_timer(timer);
 	while (!done) {
 		ALLEGRO_EVENT ev;
@@ -77,6 +78,9 @@ int main(int argc, char** argv)
 		else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
 			if (ev.mouse.button & 2) {
 				counter++;
+				r = 10;
+				b = xPos%255;
+				g = yPos%255;
 				al_clear_to_color(al_map_rgb(counter + 3, 0, 250 - counter));
 			}
 		}
@@ -87,7 +91,7 @@ int main(int argc, char** argv)
 		}
 
 		if (redraw && al_is_event_queue_empty(event_queue)) {
-			al_draw_filled_rectangle(xPos + 50, yPos + 50, xPos - 50, yPos - 50, al_map_rgb(255, 255, 255));
+			al_draw_filled_rectangle(xPos + 50, yPos + 50, xPos - 50, yPos - 50, al_map_rgb(r,g,b));
 
 			al_flip_display();
 		}
