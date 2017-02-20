@@ -9,7 +9,7 @@ int main() {
 	int eLevel = 5;
 
 	if (pLevel > eLevel) {
-		cout << "You win\n";
+		cout << "You win.\n";
 	}
 
 	return 0;
