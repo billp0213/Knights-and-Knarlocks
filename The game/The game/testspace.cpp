@@ -91,7 +91,9 @@ int main(int argc, char** argv)
 		}
 
 		if (redraw && al_is_event_queue_empty(event_queue)) {
-			al_draw_filled_rectangle(xPos + 50, yPos + 50, xPos - 50, yPos - 50, al_map_rgb(r,g,b));
+			al_draw_filled_rectangle(xPos + 50, yPos + 50, xPos - 50, yPos - 50, al_map_rgb(r, g, b));
+			al_draw_rounded_rectangle(xPos + 25, yPos + 25, xPos - 25, yPos - 25, 20, 20, al_map_rgb(255, 255, 255), -10);
+			
 
 			al_flip_display();
 		}
