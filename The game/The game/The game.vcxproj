@@ -123,7 +123,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="combat.cpp" />
     <ClCompile Include="testspace.cpp" />
   </ItemGroup>
   <ItemGroup>
