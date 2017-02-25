@@ -3,15 +3,7 @@
 
 class Character {
 	public:
-		Character(){
-			xPos = 0;
-			yPos = 0;
-			level = 1;
-			stats[0] = 10;
-			stats[1] = 1;
-			stats[2] = 1;
-			stats[3] = 1;
-		}
+		Character() {};
 		Character(int xPos_in, int yPos_in, int level_in, int multiplier)
 			: xPos(xPos_in), yPos(yPos_in) {
 			level = level_in;
@@ -20,18 +12,10 @@ class Character {
 			stats[2] = multiplier * level_in;
 			stats[3] = multiplier * level_in;
 		} 
-		int get_xPos() {
-			return xPos;
-		}
-		int get_yPos() {
-			return yPos;
-		}
-		int get_level() {
-			return level;
-		}
-		int* get_stats() {
-			return stats;
-		}
+		int get_xPos();
+		int get_yPos();
+		int get_level();
+		int* get_stats();
 		void set_stats(int level_in, int multiplier) {
 			level = level_in;
 			stats[0] = 10 + level_in * multiplier;
