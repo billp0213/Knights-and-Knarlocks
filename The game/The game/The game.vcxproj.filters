@@ -21,12 +21,18 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="combat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="combat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
