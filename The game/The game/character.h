@@ -3,6 +3,7 @@
 
 class Character {
 	public:
+		Character();
 		Character(int xPos_in, int yPos_in, int level_in, int multiplier);
 		int get_xPos();
 		int get_yPos();
@@ -22,7 +23,8 @@ class Character {
 
 class Player : public Character {
 	public:
-		Player(int xPos_in, int yPos_in, int level_in, int multiplier, int* aux_in, int Exp_in) : Character(xPos_in, yPos_in, level_in, multiplier);
+		Player();
+		Player(int xPos_in, int yPos_in, int level_in, int multiplier, int* aux_in, int Exp_in);
 		int* get_auxStats();
 		int get_exp();
 		void set_auxStats(int* aux_in);
@@ -32,5 +34,5 @@ class Player : public Character {
 		//intellect, luck, magic, ????
 		int auxStats[4];
 		int exp;
-		int multiplier = 1;
+		int multiplier;
 };

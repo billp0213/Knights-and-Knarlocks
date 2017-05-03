@@ -1,5 +1,14 @@
 #include "Character.h"
 
+Character::Character() {
+	xPos = 0;
+	yPos = 0;
+	level = 0;
+	for (int i = 0; i < 4; i++) {
+		stats[i] = 0;
+	}
+}
+
 Character::Character(int xPos_in, int yPos_in, int level_in, int multiplier) : xPos(xPos_in), yPos(yPos_in) {
 	set_stats(level_in, multiplier);
 }
@@ -37,12 +46,21 @@ void Character::set_stats(int level_in, int multiplier) {
 	stats[3] = 1 + level * multiplier;
 }
 
-Player::Player(int xPos_in, int yPos_in, int level_in, int multiplier, int* aux_in, int exp_in) {
+Player::Player() : Character() {
+	exp = 0;
+	for (int i = 0; i < 4; i++) {
+		auxStats[i] = 0;
+	}
+	multiplier = 1;
+}
+
+Player::Player(int xPos_in, int yPos_in, int level_in, int multiplier_in, int* aux_in, int exp_in) : Character(xPos_in, yPos_in, level_in, multiplier_in) {
 	exp = exp_in;
 	for (int i = 0; i < 4; i++) {
 		auxStats[i] = *aux_in;
 		aux_in++;
 	}
+	multiplier = multiplier_in;
 }
 
 int * Player::get_auxStats() {
