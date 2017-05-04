@@ -1,6 +1,7 @@
 #include "allegro5\allegro5.h"
 #include "allegro5\allegro_native_dialog.h"
 #include "allegro5\allegro_primitives.h"
+#include "combat.h"
 #include <iostream>
 
 enum KEYS { UP, DOWN };
@@ -100,6 +101,14 @@ int main(int argc, char** argv)
 		counter++;
 	}
 
+	int aux[4] = { 0 };
+
+	Character * enemy = new Character(100, 100, 3, 1);
+	Player * player = new Player(100, 100, 5, 1, aux, 0);
+	std::vector<Character*> nme;
+	nme.push_back(enemy);
+	Combat * testBattle = new Combat(player, &nme, 1);
+	testBattle->battle();
 
 
 	al_clear_to_color(al_map_rgb(230, 0, 255));
@@ -107,7 +116,7 @@ int main(int argc, char** argv)
 
 	al_flip_display();
 
-	al_rest(5.0);
+	al_rest(10.0);
 	al_destroy_display(display);
 
 

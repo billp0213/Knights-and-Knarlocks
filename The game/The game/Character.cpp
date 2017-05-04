@@ -38,7 +38,7 @@ void Character::set_pos(int xPos_in, int yPos_in) {
 	yPos = yPos_in;
 }
 
-void Character::lose_health(int hp_in) {
+void Character::lose_health(double hp_in) {
 	stats[0] -= hp_in;
 }
 

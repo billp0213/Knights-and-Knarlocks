@@ -12,7 +12,7 @@ class Character {
 		void set_level(int level_in);
 		void set_stats(int level_in, int multiplier);
 		void set_pos(int xPos_in, int yPos_in);
-		void lose_health(int hp_in);
+		void lose_health(double hp_in);
 	private:
 		int xPos;
 		int yPos;
