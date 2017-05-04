@@ -25,7 +25,7 @@ int Character::get_level() {
 	return level;
 }
 
-int * Character::get_stats() {
+double * Character::get_stats() {
 	return &stats[0];
 }
 
@@ -36,6 +36,10 @@ void Character::set_level(int level_in) {
 void Character::set_pos(int xPos_in, int yPos_in) {
 	xPos = xPos_in;
 	yPos = yPos_in;
+}
+
+void Character::lose_health(int hp_in) {
+	stats[0] -= hp_in;
 }
 
 void Character::set_stats(int level_in, int multiplier) {

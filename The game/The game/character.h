@@ -8,16 +8,17 @@ class Character {
 		int get_xPos();
 		int get_yPos();
 		int get_level();
-		int* get_stats();
+		double* get_stats();
 		void set_level(int level_in);
 		void set_stats(int level_in, int multiplier);
 		void set_pos(int xPos_in, int yPos_in);
+		void lose_health(int hp_in);
 	private:
 		int xPos;
 		int yPos;
 		int level;
 //hp, attack, defense, speed		
-		int stats[4];
+		double stats[4];
 		
 };
 
